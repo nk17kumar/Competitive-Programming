@@ -7,6 +7,7 @@ int p2[32];
 struct node{
 	node* zero;
 	node* one;
+	node(){};
 };
 node* root;
 
