@@ -7,7 +7,10 @@ using namespace std;
 int edgeArr[MAXN];
 int nodeArr[MAXN];
 int depth[MAXN];
-int par[MAXN][31];        // memset it with -1
+
+// memset it with -1
+int par[MAXN][31];        
+
 int subtree[MAXN];
 int chainNum[MAXN];
 int chainHead[MAXN];
@@ -173,7 +176,7 @@ int main(int argc, char const *argv[])
 	dfs(1,0);
 	par[1][0] = -1;
 	dp();
-    hld(1,0,0,0);
+        hld(1,0,0,0);
 	build(1,0,ptr);
 	int q,c; cin >> q;
 	while(q--){
