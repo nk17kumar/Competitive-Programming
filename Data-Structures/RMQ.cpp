@@ -12,8 +12,8 @@ void build(int node,int low,int high)
 	 return;
 	}
 	int mid = (low+high)>>1;
-	update(2*node,low,mid);
-	update(2*node+1,mid+1,high);
+	build(2*node,low,mid);
+	build(2*node+1,mid+1,high);
 	segtree[node]=min(segtree[2*node],segtree[2*node+1]);
 }
 
@@ -35,7 +35,7 @@ void update(int node,int low,int high,int idx,long long val)
 	segtree[node]=min(segtree[2*node],segtree[2*node+1]);
 }
 
-ll query(int node,int low,int high,int l,int r)
+int query(int node,int low,int high,int l,int r)
 {
 	if(l<=low && r>=high)
 	  {
